@@ -1,3 +1,4 @@
+using Characters;
 using Data;
 using System;
 using UnityEngine;
@@ -64,6 +65,17 @@ namespace Player
             {
                 var updateData = Data;
                 updateData.Money = value;
+                GameData.Instance.PlayerData = Data;
+            }
+        }
+
+        public Character character 
+        { 
+            get { return Data.Character; }
+            set 
+            {
+                var updateData = Data;
+                updateData.Character = value;
                 GameData.Instance.PlayerData = Data;
             }
         }

@@ -1,3 +1,4 @@
+using Characters;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,4 +11,5 @@ public struct PlayerData
     public int Level;
     public Vector3 Position;
     public Quaternion Rotation;
+    public Character Character;
 }

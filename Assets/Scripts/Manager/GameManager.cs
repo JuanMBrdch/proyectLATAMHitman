@@ -8,4 +8,9 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     public List<MissionEntity> MissionsActivated = new List<MissionEntity>();
 
 
+
+    private void Awake()
+    {
+        
+    }
 }

@@ -1,4 +1,4 @@
-using Mission;
+using Characters;
 using System.Collections.Generic;
 
 namespace Data
@@ -6,6 +6,7 @@ namespace Data
     public class GameData : MonoBehaviourSingleton<GameData>
     {
         public List<MissionData> MissionsData;
+        public List<CharacterData> CharacterDatas;
         public PlayerData PlayerData;
 
 
@@ -13,6 +14,7 @@ namespace Data
         {
             base.Awake();
             MissionsData = new List<MissionData>();
+            CharacterDatas = new List<CharacterData>();
         }
     }
 
