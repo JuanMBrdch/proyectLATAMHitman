@@ -2,6 +2,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "KillMission", menuName = "Missions/KillMission")]
 public class Kill : MissionSystem
 {
+    public TargetCharacter character;
+
+    public Vector3 TargetPosition;
     public override void OnStart()
     {
         base.OnStart();

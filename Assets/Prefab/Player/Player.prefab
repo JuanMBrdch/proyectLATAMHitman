@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3071157982518099608}
   - component: {fileID: 7483804321032087728}
   - component: {fileID: 7359233710064351348}
+  - component: {fileID: 2193604395899179203}
+  - component: {fileID: 7714954518364838884}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -72,7 +74,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2193604395899179203}
         m_TargetAssemblyTypeName: CharacterInputController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -91,3 +93,27 @@ MonoBehaviour:
   m_DefaultActionMap: CharacterActions
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2193604395899179203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3192337167366134888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a23041bd3363374d82beb394b90745f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7714954518364838884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3192337167366134888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9167b14c83d340940924a3af285ed0dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

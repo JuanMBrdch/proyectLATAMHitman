@@ -8,5 +8,12 @@ namespace Model
         {
             get { return new PlayerEntity(); }
         }
+
+        public static PlayerModel LocalPlayerModel;
+
+        private void Awake()
+        {
+            LocalPlayerModel = GetComponent<PlayerModel>();
+        }
     }
 }

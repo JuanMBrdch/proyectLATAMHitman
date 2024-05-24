@@ -1,3 +1,4 @@
+using Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,13 @@ using UnityEngine.InputSystem;
 
 public class CharacterInputController : MonoBehaviour
 {
+    private PlayerModel PlayerModel;
     private CharacterMovementController characterMovementController;
 
     private void Start()
     {
-        characterMovementController = GetComponent<CharacterMovementController>();
+        PlayerModel = GetComponent<PlayerModel>();
+        characterMovementController = PlayerModel.Entity.gameObject.GetComponent<CharacterMovementController>();
     }
     public void OnMove(InputAction.CallbackContext context) 
     {

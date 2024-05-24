@@ -10,12 +10,37 @@ namespace Entity
     {
         public string Id { get; set; }
 
-        public CharacterData CharacterData
+        private CharacterData CharacterData
         {
             get { return GameData.Instance.CharacterDatas.FirstOrDefault(X => X.ID == Id); }
-            private set { }
+            set { }
         }
+        public string Name
+        {
+            get
+            {
+                return CharacterData.Name;
+            }
+            set 
+            {
+                int index = -1;
 
+                for (int i = 0; i < GameData.Instance.CharacterDatas.Count; i++)
+                {
+                    if (GameData.Instance.CharacterDatas[i].ID == Id)
+                    {
+                        index = i; break;
+                    }
+                }
+
+                if (index != -1)
+                {
+                    var updateData = CharacterData;
+                    updateData.Name = value;
+                    GameData.Instance.CharacterDatas[index] = updateData;
+                }
+            }
+        }
         public GameObject gameObject
         {
             get { return CharacterData.gameObject; }
@@ -25,16 +50,43 @@ namespace Entity
 
                 for (int i = 0; i < GameData.Instance.CharacterDatas.Count; i++)
                 {
-                    if (GameData.Instance.CharacterDatas[i].ID == Id) 
+                    if (GameData.Instance.CharacterDatas[i].ID == Id)
                     {
                         index = i; break;
                     }
                 }
 
-                if (index != -1) 
+                if (index != -1)
                 {
                     var updateData = CharacterData;
                     updateData.gameObject = value;
+                    GameData.Instance.CharacterDatas[index] = updateData;
+                }
+            }
+        }
+        public Character CharacterInfo
+        {
+            get
+            {
+                //var data = Character.GetCharacter(CharacterData.CharacterDataID);
+                return Character.GetRandom();
+            }
+            set
+            {
+                int index = -1;
+
+                for (int i = 0; i < GameData.Instance.CharacterDatas.Count; i++)
+                {
+                    if (GameData.Instance.CharacterDatas[i].ID == Id)
+                    {
+                        index = i; break;
+                    }
+                }
+
+                if (index != -1)
+                {
+                    var updateData = CharacterData;
+                    updateData.CharacterDataID = value.ID;
                     GameData.Instance.CharacterDatas[index] = updateData;
                 }
             }
