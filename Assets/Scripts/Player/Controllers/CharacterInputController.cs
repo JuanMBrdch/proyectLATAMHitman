@@ -12,13 +12,13 @@ public class CharacterInputController : MonoBehaviour
     private void Start()
     {
         PlayerModel = GetComponent<PlayerModel>();
-        characterMovementController = PlayerModel.Entity.gameObject.GetComponent<CharacterMovementController>();
+        //characterMovementController = PlayerModel.Entity.gameObject.GetComponent<CharacterMovementController>();
     }
     public void OnMove(InputAction.CallbackContext context) 
     {
         Vector2 movement = context.ReadValue<Vector2>();
 
-        if(characterMovementController != null ) { }
+        if (characterMovementController == null) return;
 
         characterMovementController.Movement(movement);
     }

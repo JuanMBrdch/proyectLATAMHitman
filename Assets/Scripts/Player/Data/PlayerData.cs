@@ -6,6 +6,7 @@ using UnityEngine;
 public struct PlayerData 
 {
     public string Id;
+    public string CharacterEntityId;
     public string PlayerName;
     public int Money;
     public int Level;

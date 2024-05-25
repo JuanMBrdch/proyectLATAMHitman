@@ -1,5 +1,6 @@
 using Characters;
 using Data;
+using Entity;
 using System;
 using UnityEngine;
 
@@ -58,7 +59,7 @@ namespace Player
                 GameData.Instance.PlayerData = Data;
             }
         }
-        public int Money 
+        public int Money
         {
             get { return Data.Money; }
             set
@@ -68,11 +69,20 @@ namespace Player
                 GameData.Instance.PlayerData = Data;
             }
         }
-
-        public Character character 
-        { 
+        public CharacterEntity Character
+        {
+            get { return new CharacterEntity(Data.CharacterEntityId); }
+            set
+            {
+                var updateData = Data;
+                updateData.CharacterEntityId = value.Id;
+                GameData.Instance.PlayerData = Data;
+            }
+        }
+        public Character CharacterData
+        {
             get { return Data.Character; }
-            set 
+            set
             {
                 var updateData = Data;
                 updateData.Character = value;

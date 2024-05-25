@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerCharacter
   m_EditorClassIdentifier: 
   ID: PlayerCharacter
-  Model: {fileID: 0}
+  Model: {fileID: 1331065709503051477, guid: ec56e091cef2db54d998d271fbf71250, type: 3}
   Stats:
     Speed: 5
     currentLife: 250

@@ -18,7 +18,6 @@ namespace Mission
 
         public void StartMission(MissionEntity missionEntity) 
         {
-            GameManager.Instance.MissionsActivated.Add(missionEntity);
             missionEntity.MissionSystem.OnStart();
         }
     }

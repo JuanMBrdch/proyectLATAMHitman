@@ -41,6 +41,31 @@ namespace Entity
                 }
             }
         }
+
+        public Vector3 Position 
+        {
+            get { return CharacterData.Position; }
+            set
+            {
+                int index = -1;
+
+                for (int i = 0; i < GameData.Instance.CharacterDatas.Count; i++)
+                {
+                    if (GameData.Instance.CharacterDatas[i].ID == Id)
+                    {
+                        index = i; break;
+                    }
+                }
+
+                if (index != -1)
+                {
+                    var updateData = CharacterData;
+                    updateData.Position = value;
+                    GameData.Instance.CharacterDatas[index] = updateData;
+                }
+            }
+        }
+
         public GameObject gameObject
         {
             get { return CharacterData.gameObject; }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Characters
@@ -7,6 +8,7 @@ namespace Characters
         public string ID;
         public string Name;
         public string CharacterDataID;
-        public GameObject gameObject;
+        public Vector3 Position;
+        [NonSerialized] public GameObject gameObject;
     }
 }
