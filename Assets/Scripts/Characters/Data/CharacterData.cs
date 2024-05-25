@@ -9,6 +9,6 @@ namespace Characters
         public string Name;
         public string CharacterDataID;
         public Vector3 Position;
-        [NonSerialized] public GameObject gameObject;
+        public GameObject gameObject;
     }
 }

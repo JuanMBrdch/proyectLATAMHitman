@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missionSystems:
-  - {fileID: 11400000, guid: 2e6c7ee5d0566654686a8ed303b31a64, type: 2}
+  - {fileID: 11400000, guid: 2b04eb40650291d4a8dae685d8f7ed57, type: 2}
 --- !u!4 &407116029
 Transform:
   m_ObjectHideFlags: 0
@@ -643,10 +643,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 672133670}
+  - {fileID: 2043530085}
   - {fileID: 597950417}
   - {fileID: 37374982}
   - {fileID: 783485047}
   - {fileID: 407116029}
   - {fileID: 1724659540}
   - {fileID: 100657781}
-  - {fileID: 2043530085}

@@ -1,3 +1,4 @@
+using Characters;
 using Data;
 using Entity;
 using Model;
@@ -54,12 +55,8 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     private void InicializePlayer()
     {
         GameObject player = Instantiate(PlayerPrefab);
-        PlayerModel playerModel = PlayerModel.LocalPlayerModel;
-
-        if (playerModel.Entity == null)
-        {
-            playerModel.Entity.Character = CharacterFactory.Instance.CreateCustomCharacter(playerModel.Entity.CharacterData, new Vector3(0, 0, 0));
-        }
+        PlayerModel playerModel = player.GetComponent<PlayerModel>();
+        playerModel.Entity.Character = CharacterFactory.Instance.CreateCustomCharacter(Character.GetCharacter(playerModel.CharacterDataID), new Vector3(0, 0, 0));
         CharacterFactory.Instance.InstanceCharacterGameObject(playerModel.Entity.Character);
     }
 }

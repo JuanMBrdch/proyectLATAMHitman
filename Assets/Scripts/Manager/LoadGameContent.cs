@@ -21,7 +21,6 @@ public class LoadGameContent : MonoBehaviour
         // Cargar todos los objetos del tipo T en el path especificado
         T[] assets = Resources.LoadAll<T>(path);
 
-        Debug.Log(assets.Length);
         // Verificar si se han encontrado objetos
         if (assets != null && assets.Length > 0)
         {

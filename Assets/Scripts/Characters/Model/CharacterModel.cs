@@ -9,16 +9,12 @@ public class CharacterModel : MonoBehaviour
     public CharacterEntity Entity 
     {
         get { return new CharacterEntity(ID); }
-        set 
-        {
-            ID = value.Id;
-            Entity = value;
-        }
     }
 
     private void Awake()
     {
-         Entity = new CharacterEntity(ID);
+        var entity = new CharacterEntity();
+        ID = entity.Id;
     }
 
     // Start is called before the first frame update

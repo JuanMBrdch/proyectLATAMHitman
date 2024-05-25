@@ -15,23 +15,29 @@ public class CharacterFactory : MonoBehaviourSingleton<CharacterFactory>
     public CharacterEntity CreateCustomCharacter(Character characterData, Vector3 Position) 
     {
         var entity = Create();
+        GameObject gameObject = Instantiate(BaseCharacterPrefab, Position, Quaternion.identity);
         entity.CharacterInfo = characterData;
         entity.Position = Position;
+        entity.gameObject = gameObject;
         return entity;
     }
 
     public CharacterEntity CreateRandomCharacter(Vector3 Position)
     {
         var entity = Create();
+        GameObject gameObject = Instantiate(BaseCharacterPrefab, Position, Quaternion.identity);
         entity.CharacterInfo = Character.GetRandom();
         entity.Position = Position;
+        entity.gameObject = gameObject;
         return entity;
     }
 
     public GameObject InstanceCharacterGameObject(CharacterEntity characterEntity) 
     {
         GameObject gameObject = Instantiate(characterEntity.CharacterInfo.Model, characterEntity.Position, Quaternion.identity);
-        characterEntity.gameObject = gameObject;
+        var parent = characterEntity.gameObject.transform;
+        gameObject.transform.SetParent(parent);
+        gameObject.name = "Renderer";
         return gameObject;
     }
 }

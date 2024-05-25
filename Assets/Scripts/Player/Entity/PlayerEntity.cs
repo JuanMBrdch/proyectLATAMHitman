@@ -19,6 +19,7 @@ namespace Player
             private set { }
         }
 
+
         public string PlayerName
         {
             get
@@ -96,7 +97,6 @@ namespace Player
             {
                 ID = Guid.NewGuid().ToString();
                 PlayerData playerData = new PlayerData();
-                playerData.Id = ID;
                 GameData.Instance.PlayerData = playerData;
                 return;
             }

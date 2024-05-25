@@ -21,7 +21,7 @@ namespace Entity
             {
                 return CharacterData.Name;
             }
-            set 
+            set
             {
                 int index = -1;
 
@@ -42,7 +42,7 @@ namespace Entity
             }
         }
 
-        public Vector3 Position 
+        public Vector3 Position
         {
             get { return CharacterData.Position; }
             set
@@ -68,25 +68,19 @@ namespace Entity
 
         public GameObject gameObject
         {
-            get { return CharacterData.gameObject; }
+            get 
+            {
+                Debug.Log(CharacterData.gameObject);
+                return CharacterData.gameObject;
+            }
             set
             {
-                int index = -1;
+                var index = GameData.Instance.CharacterDatas.IndexOf(CharacterData);
+                var updateData = CharacterData;
+                Debug.Log(value);
 
-                for (int i = 0; i < GameData.Instance.CharacterDatas.Count; i++)
-                {
-                    if (GameData.Instance.CharacterDatas[i].ID == Id)
-                    {
-                        index = i; break;
-                    }
-                }
-
-                if (index != -1)
-                {
-                    var updateData = CharacterData;
-                    updateData.gameObject = value;
-                    GameData.Instance.CharacterDatas[index] = updateData;
-                }
+                updateData.gameObject = value;
+                GameData.Instance.CharacterDatas[index] = updateData;
             }
         }
         public Character CharacterInfo
